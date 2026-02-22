@@ -12,6 +12,13 @@ GRC is a structured approach to aligning IT with business goals while managing r
 *   **Risk:** The process of identifying, assessing, and responding to risks that could affect the organization's ability to achieve its objectives. It's about making informed decisions about which risks to mitigate, transfer, avoid, or accept.
 *   **Compliance:** The act of adhering to mandated boundaries (laws and regulations) and voluntary boundaries (company policies, procedures, etc.).
 
+```mermaid
+flowchart LR
+    G[Governance\nStrategic Oversight] <--> R[Risk\nThreat Mitigation]
+    R <--> C[Compliance\nRules & Regulations]
+    C <--> G
+```
+
 ## 2. Legal & Regulatory Compliance
 
 Organizations do not operate in a vacuum. They are subject to various laws, regulations, and industry standards that dictate how they must handle data, especially Personally Identifiable Information (PII), Protected Health Information (PHI), and financial data.
@@ -27,6 +34,20 @@ Failing to comply with these regulations can result in massive financial penalti
 ## 3. The Hierarchy of Security Documentation: Policies, Standards, & Procedures
 
 A robust security program is built upon a clear hierarchy of rules and guidelines. This ensures consistency and accountability.
+
+```mermaid
+flowchart TD
+    P[Policies\nHigh-level intent\nMandatory]
+    S[Standards\nSpecific rules/requirements\nMandatory]
+    G[Guidelines\nRecommendations\nOptional]
+    B[Baselines\nMinimum security levels\nMandatory]
+    Pr[Procedures\nStep-by-step instructions\nMandatory]
+
+    P --> S
+    P -.-> G
+    S --> B
+    S --> Pr
+```
 
 ### Policies (The "Why")
 *   **Definition:** High-level statements of management intent and direction. They are mandatory.
@@ -66,6 +87,24 @@ The NIST CSF 2.0 is organized into six core functions (the "Govern" function was
 6.  **RECOVER (RC):** Develop and implement appropriate activities to maintain plans for resilience and to restore any capabilities or services that were impaired due to a cybersecurity incident. (e.g., Recovery Planning, Improvements).
 
 By adopting the NIST CSF, organizations can systematically assess their current state, define a target state, and create a roadmap to close the gaps.
+
+```mermaid
+flowchart LR
+    GV[GOVERN\nStrategy & Policy]
+    ID[IDENTIFY\nUnderstand Risk]
+    PR[PROTECT\nImplement Safeguards]
+    DE[DETECT\nIdentify Events]
+    RS[RESPOND\nTake Action]
+    RC[RECOVER\nRestore Capabilities]
+
+    GV --> ID --> PR --> DE --> RS --> RC
+    
+    %% Govern is central and informs all other functions in CSF 2.0
+    GV -.-> PR
+    GV -.-> DE
+    GV -.-> RS
+    GV -.-> RC
+```
 
 
 ## References & Further Learning

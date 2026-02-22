@@ -8,6 +8,15 @@ In this section, we cover the four primary access control models used in modern 
 
 Discretionary Access Control (DAC) is an access control model where the owner of an object (like a file or a folder) has full control over who is allowed to access that object and what permissions they have.
 
+```mermaid
+graph LR
+    Owner([Owner]) -->|"Owns"| Resource[(Resource)]
+    Owner -->|"Grants Read/Write"| UserA([User A])
+    Owner -.->|"Denies Access"| UserB([User B])
+    UserA -->|"Accesses"| Resource
+    UserB -.->|"Blocked"| Resource
+```
+
 ### Key Characteristics
 *   **Data Ownership:** Every object has an owner. The user who creates a file becomes its owner.
 *   **Discretion of the Owner:** The owner can grant or revoke access to any other user or group at their discretion.
@@ -24,6 +33,13 @@ Discretionary Access Control (DAC) is an access control model where the owner of
 ## 2. Mandatory Access Control (MAC)
 
 Mandatory Access Control (MAC) is the strictest of all access control models. In MAC, access decisions are strictly regulated by the operating system or access control mechanism based on fixed security clearances and data classifications, rather than user discretion.
+
+```mermaid
+graph TD
+    Subject([Subject<br>Clearance: Secret]) -->|"Requests Access"| Enforcer{System Enforcer}
+    Enforcer -->|"Allows<br>(Label Match)"| ObjectA[(Object A<br>Classification: Secret)]
+    Enforcer -.->|"Denies<br>(Clearance too low)"| ObjectB[(Object B<br>Classification: Top Secret)]
+```
 
 ### Key Characteristics
 *   **System Enforced:** The system enforces the access control policy; users cannot override it, even if they own the file.
@@ -44,6 +60,14 @@ Mandatory Access Control (MAC) is the strictest of all access control models. In
 
 Role-Based Access Control (RBAC) is the most widely used model in enterprise environments today. Access is granted based on the user's role within the organization rather than their individual identity.
 
+```mermaid
+graph LR
+    Alice([Alice]) -->|"Assigned Role"| HRRole[HR Manager Role]
+    Bob([Bob]) -->|"Assigned Role"| ITRole[IT Admin Role]
+    HRRole -->|"Has Permissions"| HRData[(HR Database)]
+    ITRole -->|"Has Permissions"| ServerConfig[(Server Config)]
+```
+
 ### Key Characteristics
 *   **Role Assignment:** Users are assigned to one or more roles based on their job functions (e.g., "HR Manager," "Database Administrator," "Helpdesk Tier 1").
 *   **Permissions Assigned to Roles:** Permissions are associated with the roles, not directly with the users. When a user is assigned a role, they inherit all the permissions given to that role.
@@ -60,6 +84,16 @@ Role-Based Access Control (RBAC) is the most widely used model in enterprise env
 ## 4. Attribute-Based Access Control (ABAC)
 
 Attribute-Based Access Control (ABAC) is the most flexible and advanced access control model. It evaluates a set of attributes—characteristics of the user, the resource, the environment, and the action—against a set of rules (policies) to make a dynamic access decision.
+
+```mermaid
+graph TD
+    User["User Attributes<br>(Dept: Finance)"] --> Request((Access Request))
+    Env["Env Attributes<br>(IP: Internal, Time: 10AM)"] --> Request
+    Resource["Resource Attributes<br>(Sensitivity: High)"] --> Request
+    Request --> Engine{"Policy Engine"}
+    Engine -->|"Condition matches:<br>Dept=Finance AND IP=Internal"| Allow[Permit Access]
+    Engine -.->|"Condition clearly fails"| Deny[Deny Access]
+```
 
 ### Key Characteristics
 *   **Dynamic and Context-Aware:** ABAC does not rely on static roles. Instead, it computes access decisions in real-time.

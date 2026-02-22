@@ -25,6 +25,18 @@ While the list is updated periodically, the core vulnerability classes remain co
 
 You cannot manually review every line of code in massive applications. We use automated tools to scale security testing.
 
+```mermaid
+graph TD
+    A[Application Source Code] --> B("SAST (Static Analysis)")
+    A --> C("SCA (Software Composition Analysis)")
+    D[Running Application] --> E("DAST (Dynamic Analysis)")
+    B --> F{"Vulnerability Found?"}
+    C --> F
+    E --> F
+    F -->|Yes| G[Developer Notification / IDE]
+    F -->|No| H[Proceed to Next Stage]
+```
+
 *   **SAST (Static Application Security Testing):** "White-box" testing. SAST tools analyze the raw source code or bytecode *without executing it*. 
     *   *Pros:* Finds issues early in the development lifecycle (developers get instant feedback in their IDEs), pinpoints the exact line of vulnerable code.
     *   *Cons:* Cannot find runtime vulnerabilities, high rate of false positives.
@@ -47,6 +59,22 @@ Developers are the first line of defense. Core secure coding practices include:
 Historically, security was a discrete phase at the very end of the Software Development Life Cycle (SDLC), acting as a "gatekeeper" and causing massive delays.
 
 **DevSecOps** is the integration of security practices within the DevOps process.
+
+```mermaid
+graph LR
+    A[Commit / IDE] -->|"Linting & SAST"| B(Build / CI)
+    B -->|"SCA & SAST scans"| C(Test / Staging)
+    C -->|"DAST Scans"| D(Production)
+    D -->|"WAF & RASP"| E((Monitoring))
+    E -."Feedback".-> A
+    
+    style A fill:#e1f5fe,stroke:#01579b
+    style B fill:#e1f5fe,stroke:#01579b
+    style C fill:#e1f5fe,stroke:#01579b
+    style D fill:#e1f5fe,stroke:#01579b
+    style E fill:#e1f5fe,stroke:#01579b
+```
+
 *   **Shift Left:** Moving security testing as early in the SDLC as possible. Fixing a vulnerability during the coding phase is orders of magnitude cheaper than fixing it in production.
 *   **Automation in the CI/CD Pipeline:**
     *   *Commit:* A developer commits code; an IDE plugin runs local linting for security flaws.

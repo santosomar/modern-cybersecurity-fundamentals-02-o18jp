@@ -6,6 +6,20 @@ Securing AI is a dual-edged sword: we must secure the models themselves from att
 
 ## 1. Understanding AI Threats and Vulnerabilities
 
+```mermaid
+graph LR
+    subgraph Training Phase
+        B[(Training Data)] --> C{AI Model}
+    end
+    subgraph Inference Phase
+        C --> D[User/API Interface]
+    end
+    A[Attacker] -.->|1. Data Poisoning| B
+    A -.->|2. Model Inversion| C
+    A -.->|3. Evasion Attacks| D
+    A -.->|4. Prompt Injection| D
+```
+
 AI systems introduce entirely new classes of vulnerabilities that traditional security tools (like firewalls or antivirus) cannot detect.
 
 *   **Prompt Injection:** (Specific to Large Language Models - LLMs) An attacker crafts a malicious input that bypasses the model's safety filters or instructions, causing it to perform unintended actions (e.g., revealing sensitive data, generating toxic content, or executing malicious code if the LLM is connected to an API).
@@ -15,6 +29,22 @@ AI systems introduce entirely new classes of vulnerabilities that traditional se
 
 ## 2. Securing Machine Learning Models
 
+```mermaid
+flowchart LR
+    A[Raw Data] --> B[Data Sanitization]
+    B --> C[Robust Training]
+    C --> D[Model Evaluation & SBOM]
+    D --> E[Deployment]
+    E --> F[Continuous Monitoring]
+    
+    subgraph MLSecOps Pipeline
+        B
+        C
+        D
+        F
+    end
+```
+
 Securing an ML pipeline requires moving security "left," integrating it into the data science workflow (MLSecOps).
 
 *   **Robust Training:** Training models using adversarial examples so they learn to ignore small perturbations in input data.
@@ -23,6 +53,16 @@ Securing an ML pipeline requires moving security "left," integrating it into the
 *   **Rate Limiting and Monitoring:** Limiting the number of queries a single user can make to mitigate Model Inversion attacks and continuously monitoring model outputs for sudden shifts in accuracy (model drift).
 
 ## 3. Governance and Compliance in AI
+
+```mermaid
+graph TD
+    A[AI Governance] --> B(Fairness)
+    A --> C(Accountability)
+    A --> D(Transparency)
+    B -.->|Prevent Bias| E[Ethical AI]
+    C -.->|Legal Responsibility| E
+    D -.->|Explainability| E
+```
 
 Deploying AI without governance creates massive legal and reputational risks.
 
@@ -35,6 +75,24 @@ Deploying AI without governance creates massive legal and reputational risks.
     *   *NIST AI RMF (Risk Management Framework):* A voluntary framework to help organizations incorporate trustworthiness considerations into the design, development, use, and evaluation of AI products.
 
 ## 4. AI in Adversarial Tactics and Defense
+
+```mermaid
+graph TD
+    subgraph Offensive AI
+        A1[Hyper-Personalized Phishing]
+        A2[Automated Vulnerability Discovery]
+        A3[Polymorphic Malware]
+        A4[Deepfakes]
+    end
+
+    subgraph Defensive AI
+        D1[Behavioral Analytics / UEBA]
+        D2[Automated Triage and Response]
+        D3[Threat Hunting via NLP]
+    end
+
+    Offensive AI <-->|Continuous Arms Race| Defensive AI
+```
 
 AI changes the economics of cyber warfare for both the attacker and the defender.
 

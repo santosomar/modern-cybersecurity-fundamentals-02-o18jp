@@ -12,6 +12,17 @@ Following a standardized methodology ensures comprehensive coverage, repeatable 
 
 ### The Phases of a Penetration Test
 
+```mermaid
+flowchart TD
+    A[Pre-Engagement Interactions] -->|Define Scope & Rules| B[Intelligence Gathering]
+    B -->|Passive & Active Recon| C[Threat Modeling]
+    C -->|Identify High-Value Assets| D[Vulnerability Analysis]
+    D -->|Automated & Manual Finding| E[Exploitation]
+    E -->|Breach Vulnerabilities| F[Post-Exploitation]
+    F -->|Privilege Escalation & Lateral Movement| G[Reporting]
+```
+
+
 1.  **Pre-Engagement Interactions:**
     *   Defining the scope (what systems are in/out of bounds).
     *   Establishing the Rules of Engagement (RoE) (when testing can occur, forbidden attack types like DoS).
@@ -41,6 +52,18 @@ Following a standardized methodology ensures comprehensive coverage, repeatable 
 The offensive security field is broad and offers several specialized career paths.
 
 ### Career Paths
+
+```mermaid
+graph TD
+    OS[Offensive Security Careers] --> PT[Penetration Tester]
+    OS --> BB[Bug Bounty Hunter]
+    OS --> RT[Red Teamer]
+
+    PT --> PT_Desc[Consultant / Internal<br>Runs structured tests]
+    BB --> BB_Desc[Freelance Researcher<br>Finds flaws for bounties]
+    RT --> RT_Desc[Advanced Emulation<br>Tests entire detection/response]
+```
+
 *   **Penetration Tester:** Typically works as a consultant or internal employee running structured tests against specific applications or networks following the methodology above.
 *   **Bug Bounty Hunter:** A freelance researcher who finds and reports security flaws to companies through platforms like HackerOne or Bugcrowd in exchange for financial rewards (bounties).
 *   **Red Teamer:** Performs advanced, long-term adversarial emulation. While a pen test finds as many vulnerabilities as possible, a red team operation tests the organization's entire detection and response capability against realistic, targeted threats.
@@ -58,6 +81,25 @@ To learn ethical hacking safely and legally, you must practice in an isolated en
 
 ### Building a Home Lab
 A home lab allows you to spin up vulnerable virtual machines to attack.
+
+```mermaid
+graph TD
+    subgraph Host Computer
+        Hypervisor[Hypervisor: VirtualBox / VMware]
+        
+        subgraph "Host-Only Network (Isolated)"
+            Attacker[Attacker Machine: Kali / Parrot]
+            Target1[Target Machine: Metasploitable]
+            Target2[Target Machine: Windows Eval]
+        end
+        
+        Hypervisor --> Attacker
+        Hypervisor --> Target1
+        Hypervisor --> Target2\n        Attacker <-->|Attack Traffic| Target1
+        Attacker <-->|Attack Traffic| Target2
+    end
+```
+
 *   **Hypervisor:** Install VirtualBox or VMware Workstation/Fusion on your main computer.
 *   **Attacker Machine:** Download and install Kali Linux or Parrot OS as a virtual machine. These distributions come pre-loaded with hundreds of security tools.
 *   **Target Machines:** Download intentionally vulnerable VMs, such as Metasploitable (Linux target) or set up a Windows evaluation VM. Place these targets on a *Host-Only* virtual network so they cannot reach the internet and are isolated from your home network.

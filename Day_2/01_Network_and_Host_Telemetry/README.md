@@ -22,6 +22,22 @@ Host telemetry involves gathering detailed operational and security data directl
 *   **Endpoint Detection and Response (EDR):** EDR agents (e.g., CrowdStrike Falcon, Cisco Secure Endpoint, Microsoft Defender for Endpoint, SentinelOne) continuously collect this telemetry, correlate it against threat intelligence, and provide automated or manual response capabilities.
 *   **Open Source Agents:** Wazuh, OSSEC, and beats (like Winlogbeat and Filebeat for the Elastic Stack).
 
+```mermaid
+graph TD
+    subgraph Endpoints
+        W[Windows OS]
+        L[Linux OS]
+        M[macOS]
+    end
+    
+    W -->|Event Logs, Sysmon| A(EDR / OS Agent)
+    L -->|syslog, auditd| A
+    M -->|ULS| A
+    
+    A -->|Telemetry & Alerts| C[Central Management / SIEM]
+```
+
+
 ## 2. Gathering Data from Mobile Devices
 
 Mobile devices (iOS, Android) present unique telemetry challenges because they are rarely bound to the corporate perimeter and are tightly controlled by their operating systems (sandboxing).
@@ -50,6 +66,15 @@ Network telemetry provides the "ground truth" of communications. While endpoints
 ### Modern Network Visibility
 *   **Network Detection and Response (NDR):** Solutions like Cisco Secure Network Analytics (Stealthwatch), Darktrace, or ExtraHop utilize flow data and span ports/taps combined with machine learning to baseline normal network behavior and alert on anomalies.
 *   **Zeek (formerly Bro):** A powerful open-source network analysis framework that protocol-analyzes network traffic and generates highly structured logs (e.g., HTTP requests, DNS queries, SSL certificates).
+
+```mermaid
+graph LR
+    A[Endpoints & Servers] <-->|Network Traffic| S[Switch / Router]
+    S -->|Span Port / Tap| N(NDR / Zeek)
+    S -->|NetFlow / IPFIX| F(Flow Collector)
+    N -->|Analyzed Metadata| C[SIEM / XDR]
+    F -->|Connection Data| C
+```
 
 ## 4. Telemetry of Systems and Applications in the Cloud
 
@@ -85,6 +110,18 @@ Collecting telemetry is only the first step. The true challenge lies in making t
 *   **SIEM (Security Information and Event Management):** The traditional aggregation point for logs (e.g., Splunk, Microsoft Sentinel, Elastic Security), providing centralized search, dashboarding, and correlation rules.
 *   **SOAR (Security Orchestration, Automation, and Response):** Tools that take alerts from a SIEM or other tools and automatically execute playbooks (e.g., querying threat intelligence, isolating an endpoint, disabling a user account) to reduce manual analyst workload.
 *   **XDR (Extended Detection and Response):** A more modern approach that aims to natively integrate telemetry from endpoint, network, email, and cloud into a single platform for more cohesive detection and automated response, reducing the reliance on complex SIEM engineering.
+
+```mermaid
+graph TD
+    H(Host Telemetry) -->|Logs| S[SIEM / XDR]
+    N(Network Telemetry) -->|PCAP & Flow| S
+    C(Cloud Logs) -->|API Calls & Flow Logs| S
+    M(Mobile / App Logs) -->|Telemetry| S
+    
+    S -->|Correlated Alerts| SOAR[SOAR Engine]
+    SOAR -->|Automated Playbooks| R[Automated Response]
+    SOAR -->|Triage Required| A[SOC Analyst]
+```
 
 
 ## References & Further Learning

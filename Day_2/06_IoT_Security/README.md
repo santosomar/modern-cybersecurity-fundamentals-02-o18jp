@@ -22,6 +22,23 @@ The Mirai botnet (which brought down major portions of the internet in 2016 by c
 
 IoT is not a monolith; the risks vary depending on how and where the devices are used.
 
+```mermaid
+mindmap
+  root((IoT Deployment<br/>Models))
+    Consumer IoT
+      Smart Home, Wearables
+      Risks: Privacy, Default Passwords
+    Enterprise IoT
+      Smart Office, Printers
+      Risks: Shadow IT, Pivot Points
+    Industrial IoT & OT
+      SCADA, Manufacturing
+      Risks: Physical Safety, Downtime
+    Internet of Medical Things
+      Pacemakers, Pumps
+      Risks: Patient Safety, HIPAA
+```
+
 *   **Consumer IoT (CIoT):** Smart home devices, wearables. *Primary Risks:* Privacy invasion, poor default passwords, lack of software updates, and impact on the user's home network.
 *   **Enterprise IoT (EIoT):** Smart office HVAC, connected printers, smart lighting. *Primary Risks:* Shadow IT (devices installed by facilities without IT knowledge), serving as pivot points into the corporate network.
 *   **Industrial IoT (IIoT) & OT (Operational Technology):** SCADA systems, manufacturing robots, energy grids. *Primary Risks:* Physical safety (if a robot goes rogue, people can get hurt), massive financial downtime. In IIoT, Availability and Integrity often trump Confidentiality (the CIA triad is flipped).
@@ -30,6 +47,30 @@ IoT is not a monolith; the risks vary depending on how and where the devices are
 ## 3. Data Protection, Privacy, Web/Cloud, and Network Security
 
 Securing IoT requires a defense-in-depth approach spanning the device, the network, and the cloud backend.
+
+```mermaid
+flowchart LR
+    subgraph Device Level
+        A[IoT Device]
+        B[Encrypted Data at Rest]
+        A -.-> B
+    end
+
+    subgraph Network Level
+        C[Segmented VLAN]
+        D[Network Access Control]
+        C -.-> D
+    end
+
+    subgraph Cloud Backend
+        E[Cloud Controller / APIs]
+        F[Strong Authentication]
+        E -.-> F
+    end
+
+    A -- Encrypted in Transit --> C
+    C -- Validated Traffic --> E
+```
 
 *   **Data Protection & Privacy:** Data must be encrypted both at rest (on the device storage) and in transit. Devices should practice data minimization (only collecting what is necessary).
 *   **Network Security:** 
@@ -40,6 +81,17 @@ Securing IoT requires a defense-in-depth approach spanning the device, the netwo
 ## 4. Securing Production and the Supply Chain
 
 Security must begin during the manufacturing process, not as an afterthought.
+
+```mermaid
+flowchart TD
+    A[Power On] --> B[Hardware Root of Trust verifies initial bootloader]
+    B --> C{Verified?}
+    C -- Yes --> D[Bootloader verifies OS firmware]
+    C -- No --> E[Halt Boot Process / Recovery]
+    D --> F{Verified?}
+    F -- Yes --> G[Load Operating System]
+    F -- No --> E
+```
 
 *   **Secure Boot:** Cryptographically verifying that the firmware running on the device is authorized by the manufacturer before the operating system loads.
 *   **Hardware Root of Trust:** Using a Secure Element (SE) or Trusted Platform Module (TPM) to securely store cryptographic keys in hardware, making them extremely difficult to extract.
