@@ -78,3 +78,14 @@ Attribute-Based Access Control (ABAC) is the most flexible and advanced access c
 ### Pros and Cons
 *   **Pros:** Extremely granular, highly flexible, supports Zero Trust architectures natively by considering environmental context.
 *   **Cons:** Complex to conceptualize, design, and implement. Requires robust metadata tagging for objects and attribute synchronization across identity providers. Performance can be a concern if policy evaluation is too complex.
+
+
+## References & Further Learning
+
+**HackerRepo (GitHub)**
+*   [Cheat Sheets](https://github.com/The-Art-of-Hacking/h4cker/tree/master/cheat-sheets)
+
+**Hacker Training**
+*   [Practical Cybersecurity Fundamentals (Video Course)](https://learning.oreilly.com/course/practical-cybersecurity-fundamentals/9780138037550/)
+*   [Certified in Cybersecurity - CC (ISC)²](https://learning.oreilly.com/course/certified-in-cybersecurity/9780138230364/)
+*   [CCNP and CCIE Security Core SCOR 350-701 Official Cert Guide](https://learning.oreilly.com/library/view/ccnp-and-ccie/9780138221287/)

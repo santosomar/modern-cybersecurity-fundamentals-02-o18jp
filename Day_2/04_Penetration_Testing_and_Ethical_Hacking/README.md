@@ -70,3 +70,20 @@ If you don't want to build a local lab, there are excellent online platforms:
 
 ### WebSploit Labs
 Created by Omar Santos, **WebSploit Labs** is an integrated environment designed for learning, testing, and researching cybersecurity. It includes hundreds of intentionally vulnerable applications and provides a safe, local environment to practice web application hacking (like OWASP Top 10 vulnerabilities), network attacks, and more. It is highly recommended for hands-on exercises complementing this course material.
+
+
+## References & Further Learning
+
+**HackerRepo (GitHub)**
+*   [Exploit Development](https://github.com/The-Art-of-Hacking/h4cker/tree/master/exploit-development)
+*   [Post-Exploitation](https://github.com/The-Art-of-Hacking/h4cker/tree/master/post-exploitation)
+*   [Metasploit Resources](https://github.com/The-Art-of-Hacking/h4cker/tree/master/metasploit-resources)
+*   [More Payloads](https://github.com/The-Art-of-Hacking/h4cker/tree/master/more-payloads)
+
+**Hacker Training**
+*   [Redefining Hacking (Book)](https://learning.oreilly.com/library/view/redefining-hacking-a/9780138363635/)
+*   [Building the Ultimate Cybersecurity Lab and Cyber Range (Video Course)](https://learning.oreilly.com/course/building-the-ultimate/9780138319090/)
+*   [The Art of Hacking (Video Courses)](https://theartofhacking.org)
+*   [CompTIA PenTest+ PT0-002 Cert Guide](https://learning.oreilly.com/library/view/comptia-pentest-pt0-002/9780137566204/)
+*   [Certified Ethical Hacker (CEH) Video Course](https://learning.oreilly.com/course/certified-ethical-hacker/9780135395646/)
+*   [WebSploit Labs](https://websploit.org/)

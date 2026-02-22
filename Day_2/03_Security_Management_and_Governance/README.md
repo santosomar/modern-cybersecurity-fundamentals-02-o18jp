@@ -66,3 +66,14 @@ The NIST CSF 2.0 is organized into six core functions (the "Govern" function was
 6.  **RECOVER (RC):** Develop and implement appropriate activities to maintain plans for resilience and to restore any capabilities or services that were impaired due to a cybersecurity incident. (e.g., Recovery Planning, Improvements).
 
 By adopting the NIST CSF, organizations can systematically assess their current state, define a target state, and create a roadmap to close the gaps.
+
+
+## References & Further Learning
+
+**HackerRepo (GitHub)**
+*   [Certifications](https://github.com/The-Art-of-Hacking/h4cker/tree/master/certifications)
+*   [Cheat Sheets](https://github.com/The-Art-of-Hacking/h4cker/tree/master/cheat-sheets)
+
+**Hacker Training**
+*   [Developing Cybersecurity Programs and Policies in an AI-Driven World (Book)](https://learning.oreilly.com/library/view/developing-cybersecurity-programs/9780138073992)
+*   [Certified in Cybersecurity - CC (ISC)²](https://learning.oreilly.com/course/certified-in-cybersecurity/9780138230364/)

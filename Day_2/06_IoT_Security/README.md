@@ -59,3 +59,13 @@ Governments are stepping in because the market failed to secure consumer IoT dev
 *   **Cyber Trust Marks:** Initiatives (like the FCC's proposed U.S. Cyber Trust Mark or the EU's CE marking requirements under the Cyber Resilience Act) to label devices that meet baseline security standards, helping consumers make informed choices.
 *   **Legislation:** Laws like the California IoT Security Law (SB-327) mandate that connected devices must have "reasonable security features," effectively banning default hardcoded passwords like "admin/admin".
 *   **Standards:** Growing reliance on standards like NIST IR 8259 (Foundational Cybersecurity Activities for IoT Device Manufacturers) and ETSI EN 303 645 (Cyber Security for Consumer Internet of Things).
+
+
+## References & Further Learning
+
+**HackerRepo (GitHub)**
+*   [IoT Hacking Resources](https://github.com/The-Art-of-Hacking/h4cker/tree/master/iot-hacking)
+*   [Car Hacking Resources](https://github.com/The-Art-of-Hacking/h4cker/tree/master/car-hacking)
+
+**Hacker Training**
+*   [Practical Cybersecurity Fundamentals (Video Course)](https://learning.oreilly.com/course/practical-cybersecurity-fundamentals/9780138037550/)

@@ -85,3 +85,15 @@ Collecting telemetry is only the first step. The true challenge lies in making t
 *   **SIEM (Security Information and Event Management):** The traditional aggregation point for logs (e.g., Splunk, Microsoft Sentinel, Elastic Security), providing centralized search, dashboarding, and correlation rules.
 *   **SOAR (Security Orchestration, Automation, and Response):** Tools that take alerts from a SIEM or other tools and automatically execute playbooks (e.g., querying threat intelligence, isolating an endpoint, disabling a user account) to reduce manual analyst workload.
 *   **XDR (Extended Detection and Response):** A more modern approach that aims to natively integrate telemetry from endpoint, network, email, and cloud into a single platform for more cohesive detection and automated response, reducing the reliance on complex SIEM engineering.
+
+
+## References & Further Learning
+
+**HackerRepo (GitHub)**
+*   [Threat Hunting Resources](https://github.com/The-Art-of-Hacking/h4cker/tree/master/threat-hunting)
+*   [Digital Forensics and Incident Response (DFIR) Resources](https://github.com/The-Art-of-Hacking/h4cker/tree/master/dfir)
+*   [Linux Hardening](https://github.com/The-Art-of-Hacking/h4cker/tree/master/linux-hardening)
+*   [macOS Hardening](https://github.com/The-Art-of-Hacking/h4cker/tree/master/macos-hardening)
+
+**Hacker Training**
+*   [Practical Cybersecurity Fundamentals (Video Course)](https://learning.oreilly.com/course/practical-cybersecurity-fundamentals/9780138037550/)

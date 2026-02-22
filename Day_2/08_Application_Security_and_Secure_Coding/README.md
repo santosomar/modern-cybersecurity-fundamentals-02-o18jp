@@ -53,3 +53,13 @@ Historically, security was a discrete phase at the very end of the Software Deve
     *   *Build:* The CI server (like Jenkins or GitHub Actions) automatically runs SCA (checking libraries) and SAST scans. If critical vulnerabilities are found, the build *fails*.
     *   *Test/Staging:* The application is deployed to a staging environment, and automated DAST scanners attack it.
     *   *Production:* Real-time protection with Web Application Firewalls (WAF) and Runtime Application Self-Protection (RASP).
+
+
+## References & Further Learning
+
+**HackerRepo (GitHub)**
+*   [Exploit Development](https://github.com/The-Art-of-Hacking/h4cker/tree/master/exploit-development)
+
+**Hacker Training**
+*   [AI-Enabled Programming, Networking, and Cybersecurity (Video Course)](https://learning.oreilly.com/course/ai-enabled-programming-networking/9780135402696/)
+*   [WebSploit Labs](https://websploit.org/)

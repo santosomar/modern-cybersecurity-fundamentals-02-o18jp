@@ -48,3 +48,17 @@ AI changes the economics of cyber warfare for both the attacker and the defender
 *   **Behavioral Analytics (UEBA):** AI is excellent at establishing baselines of "normal" behavior for users and entities on a network, making it highly effective at spotting anomalies (like a compromised account suddenly downloading gigabytes of data).
 *   **Automated Triage and Response:** Using AI to pre-analyze the thousands of alerts a SOC receives daily, dismissing false positives, and automatically grouping related alerts into a single actionable incident.
 *   **Threat Hunting:** Empowering analysts to use natural language queries (e.g., "Show me all hosts that connected to Russia today") instead of writing complex SQL or SIEM queries, drastically accelerating investigation times.
+
+
+## References & Further Learning
+
+**HackerRepo (GitHub)**
+*   [General Threat Hunting / AI Repos](https://github.com/The-Art-of-Hacking/h4cker/) *(check main repo for emerging AI security content)*
+
+**Hacker Training**
+*   [AI-Powered Digital Cyber Resilience (Book)](https://www.oreilly.com/library/view/ai-powered-digital-cyber/9780135408599/)
+*   [Beyond the Algorithm: AI, Security, Privacy, and Ethics (Book)](https://learning.oreilly.com/library/view/beyond-the-algorithm/9780138268442)
+*   [The AI Revolution in Networking, Cybersecurity, and Emerging Technologies (Book)](https://learning.oreilly.com/library/view/the-ai-revolution/9780138293703)
+*   [Build Your Own AI Lab (Video Course)](https://learning.oreilly.com/course/build-your-own/9780135439616)
+*   [Defending and Deploying AI (Video Course)](https://www.oreilly.com/videos/defending-and-deploying/9780135463727/)
+*   [Securing Generative AI (Video Course)](https://learning.oreilly.com/course/securing-generative-ai/9780135401804/)

@@ -44,3 +44,12 @@ Organizations must assess and monitor the security posture of the companies they
 *   **Contractual Requirements:** Enforcing security standards (e.g., "The vendor must maintain SOC 2 Type II compliance," or "The vendor must notify us of a breach within 24 hours") in the Master Services Agreement (MSA).
 *   **Continuous Monitoring:** Point-in-time assessments are insufficient. Organizations use external risk rating platforms (like SecurityScorecard or BitSight) to continuously monitor the public-facing security posture of their vendors.
 *   **Zero Trust Architecture:** Even if a trusted vendor's software is running in your environment, adopting a Zero Trust mindset means continuously verifying its behavior and restricting its access via micro-segmentation to limit the blast radius if the vendor is compromised.
+
+
+## References & Further Learning
+
+**HackerRepo (GitHub)**
+*   [Software Bill of Materials (SBOM) Resources](https://github.com/The-Art-of-Hacking/h4cker/tree/master/sbom)
+
+**Hacker Training**
+*   [Developing Cybersecurity Programs and Policies in an AI-Driven World (Book)](https://learning.oreilly.com/library/view/developing-cybersecurity-programs/9780138073992)

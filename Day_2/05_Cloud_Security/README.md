@@ -54,3 +54,14 @@ Security operations adapt to the cloud environment.
 *   **Compliance:** CSPs provide compliance reports (SOC 2, ISO 27001, FedRAMP) for their infrastructure (Security *of* the Cloud). Customers inherit this compliance but must still prove they have secured their own workloads (Security *in* the Cloud).
 *   **Incident Response:** IR in the cloud relies heavily on automation and APIs. Instead of physically isolating a server, an automated script might alter a Security Group to quarantine the instance, take a forensic snapshot of the disk, and alert the SOC team.
 *   **Penetration Testing:** You cannot perform denial-of-service (DoS) attacks or test the underlying hypervisor without express permission from the CSP. Pen tests in the cloud focus heavily on testing authorized configurations, exploiting poor IAM policies, and discovering exposed storage buckets or APIs.
+
+
+## References & Further Learning
+
+**HackerRepo (GitHub)**
+*   [Cloud Security Resources](https://github.com/The-Art-of-Hacking/h4cker/tree/master/cloud-resources)
+*   [Docker and Kubernetes Security](https://github.com/The-Art-of-Hacking/h4cker/tree/master/docker-and-k8s-security)
+
+**Hacker Training**
+*   [Practical Cybersecurity Fundamentals (Video Course)](https://learning.oreilly.com/course/practical-cybersecurity-fundamentals/9780138037550/)
+*   [Hacking Scenarios (Cloud-based Labs)](https://hackingscenarios.com/)
