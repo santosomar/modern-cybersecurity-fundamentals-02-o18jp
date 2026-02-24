@@ -81,28 +81,8 @@ To learn ethical hacking safely and legally, you must practice in an isolated en
 
 ### Building a Home Lab
 A home lab allows you to spin up vulnerable virtual machines to attack.
-
-```mermaid
-graph TD
-    subgraph Host Computer
-        Hypervisor[Hypervisor: VirtualBox / VMware]
-        
-        subgraph "Host-Only Network (Isolated)"
-            Attacker[Attacker Machine: Kali / Parrot]
-            Target1[Target Machine: Metasploitable]
-            Target2[Target Machine: Windows Eval]
-        end
-        
-        Hypervisor --> Attacker
-        Hypervisor --> Target1
-        Hypervisor --> Target2\n        Attacker <-->|Attack Traffic| Target1
-        Attacker <-->|Attack Traffic| Target2
-    end
-```
-
-*   **Hypervisor:** Install VirtualBox or VMware Workstation/Fusion on your main computer.
-*   **Attacker Machine:** Download and install Kali Linux or Parrot OS as a virtual machine. These distributions come pre-loaded with hundreds of security tools.
-*   **Target Machines:** Download intentionally vulnerable VMs, such as Metasploitable (Linux target) or set up a Windows evaluation VM. Place these targets on a *Host-Only* virtual network so they cannot reach the internet and are isolated from your home network.
+- [Building the Ultimate Cybersecurity Lab and Cyber Range](https://learning.oreilly.com/course/building-the-ultimate/9780138319090/)
+- [Build Your Own AI Lab (video)](https://learning.oreilly.com/course/build-your-own/9780135439616) Hands-on guide to home and cloud-based AI labs. Learn to set up and optimize labs to research and experiment in a secure environment. 
 
 ### Online Practice Platforms
 If you don't want to build a local lab, there are excellent online platforms:
